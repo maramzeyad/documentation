@@ -17,6 +17,8 @@ individual payslips, a batch of payslips, or commission payslips.
    :align: center
    :alt: Payslips menu selection in Payroll.
 
+.. _payroll/to-pay:
+
 To pay
 ======
 
@@ -28,64 +30,66 @@ from this dashboard.
    :align: center
    :alt: View all payslips that need to be paid on the Payslips To Pay page.
 
-Each payslip will list the :guilabel:`Reference` number for the individual payslip, the
-:guilabel:`Employee` name, :guilabel:`Batch Name`, the :guilabel:`From` and :guilabel:`To` date
-range, the :guilabel:`Company`, the :guilabel:`Basic Wage`, :guilabel:`Net Wage`, and the
-:guilabel:`Status` of the payslip.
+Each payslip lists the :guilabel:`Reference` number for the individual payslip, the
+:guilabel:`Employee` name, :guilabel:`Batch Name`, the :guilabel:`Company`, the :guilabel:`Basic
+Wage`, :guilabel:`Gross Wage`, :guilabel:`Net Wage`, and the :guilabel:`Status` of the payslip.
 
-Clicking on an individual payslip entry will show the details for the individual payslip.
+Click on an individual payslip entry to view the details for that individual payslip.
 
 .. _payroll/new-payslip:
 
 Create new payslip
 ------------------
 
-A new payslip can be created from the :guilabel:`Payslips To Pay` page (:menuselection:`Payroll app
---> Payslips --> To Pay`) or the :guilabel:`Employee Payslips` page (:menuselection:`Payroll app
---> Payslips --> All Payslips`), by clicking the :guilabel:`Create` button in the top-left corner.
+A new payslip can be created from either the :ref:`Payslips To Pay <payroll/to-pay>` page, or the
+:ref:`Employee Payslips <payroll/all-payslips>` page.
 
-Clicking :guilabel:`Create` reveals a blank payslip form, wherein the necessary payslip information
-can be entered.
+Create a new payslip by clicking the :guilabel:`New` button, located in the top-left corner.
+
+A blank payslip form loads, wherein the necessary payslip information can be entered.
 
 Required fields
 ~~~~~~~~~~~~~~~
 
 On the blank payslip form, a number of fields are required to be filled in with the necessary
-information. These required fields are represented by **bold** lines.
+information.
+
+- :guilabel:`Employee`: type in the name of an employee, or select the desired employee from the
+  drop-down list.
+
+  Upon selecting an employee, several other fields on the payslip form may auto-populate.
+
+  Typically, after making a selection in the :guilabel:`Employee` field, Odoo auto-populates all the
+  other required fields (besides the :guilabel:`Period` field), but **only** if that information is
+  already on that employee's form in the *Employees* app.
+- :guilabel:`Period`: the current month (the first day to the last day) auto-populates the
+  :guilabel:`Period` fields by default. The dates can be changed, if desired.
+
+  To change the start date, click on the first date field to reveal a pop-up calendar. On this
+  calendar, use the :guilabel:`< (less-than)` and :guilabel:`> (greater than)` icons to select the
+  desired month, then click on the desired day to select that specific date.
+
+  Repeat this process to modify the end date for the payslip.
+- :guilabel:`Contract`: using the drop-down menu, select the desired contract for the employee. Only
+  the available corresponding contracts for the selected employee appear as options.
+- :guilabel:`Structure`: using the drop-down menu, select the salary structure type. Only the
+  available corresponding structures for the selected contract for that specific employee appear as
+  options.
+- :guilabel:`Payslip Name`: in the :guilabel:`Other Info` tab, type in a name for the payslip. The
+  name should be short and descriptive, such as `(Employee Name) April 2023`.
+- :guilabel:`Company`: in the :guilabel:`Other Info` tab, select the company the payslip applies to
+  using the drop-down menu.
+- :guilabel:`Salary Journal`: this field, located in the :guilabel:`Other Info` tab, auto-pulates
+  after selecting an :guilabel:`Employee`. This field is not able to be edited, as it is linked to
+  the *Accounting* application.
 
 .. image:: payslips/new-payslip.png
    :align: center
    :alt: The necessary fields for a new payslip.
 
-- :guilabel:`Employee`: Type in the name of an employee, or select the desired employee from the
-  drop-down list. Upon selecting an employee, several other fields on the payslip form may
-  auto-populate. Typically, after making a selection in the :guilabel:`Employee` field, Odoo
-  auto-populates the :guilabel:`Contract`, :guilabel:`Structure`, and :guilabel:`Payslip Name`
-  fields, but **only** if that information is already on that employee's form in the *Employees*
-  app.
-- :guilabel:`Period`: Click the default date to reveal a pop-up calendar. On this calendar, use the
-  :guilabel:`< (less-than)` and :guilabel:`> (greater than)` icons to select the desired month, and
-  click on the desired day to select that specific date as the start date for the payslip. Repeat
-  this process to add an end date for the payslip in the field below.
-- :guilabel:`Contract`: Using the drop-down menu, select the desired contract for the employee. Only
-  the available corresponding contracts for the selected employee appear as options.
-- :guilabel:`Structure`: Using the drop-down menu, select the salary structure type. Only the
-  available corresponding structures for the selected contract for that specific employee appear as
-  options.
-- :guilabel:`Payslip Name`: In the blank field, type in the name for the payslip. The name should be
-  short and descriptive, such as `April 2023`.
-- :guilabel:`Company`: In the :guilabel:`Accounting Information` tab, select the company the payslip
-  applies to from the :guilabel:`Company` drop-down menu.
-- :guilabel:`Salary Journal`: In the :guilabel:`Accounting Information` tab, enter the salary
-  journal in which the payment will be reflected, and found in the *Accounting* application.
-
-.. image:: payslips/new-payslip-tab.png
-   :align: center
-   :alt: The necessary fields for a new payslip in the Accounting Information tab.
-
 .. important::
-   It is recommended to check with the accounting department to ensure every entry that affects the
-   *Accounting* application is correct.
+   If modifications to auto-populated fields are made, it is recommended to check with the
+   accounting department to ensure every entry that affects the *Accounting* application is correct.
 
 Optional fields
 ~~~~~~~~~~~~~~~
@@ -119,9 +123,9 @@ When all the necessary information on the payslip is entered, click :guilabel:`S
 data, or click :guilabel:`Discard` to delete the entry.
 
 .. note::
-   Saving the entry is not required in order to compute the sheet, although it is considered best
+   Saving the entry is not required to compute the sheet, although it is considered best
    practice to do so. The :guilabel:`Compute Sheet` button can be clicked without first saving the
-   payslip. Doing so will save the entry *and* compute the sheet.
+   payslip. Doing so saves the entry *and* computes the sheet.
 
 Click the :guilabel:`Compute Sheet` button to register all the
 information, and have the :guilabel:`Salary Computation` tab populated. If any modifications need to
@@ -154,8 +158,8 @@ If a payment needs to be cancelled or refunded, click the corresponding :guilabe
 
 .. important::
    In order for a payslip to be paid, the employee *must* have a bank account entered in their
-   contact information. If there is no bank information, a payslip cannot be paid, and an error will
-   appear when the :guilabel:`Make Payment` button is clicked. Banking information can be found in
+   contact information. If there is no bank information, a payslip cannot be paid, and an error
+   appears when the :guilabel:`Make Payment` button is clicked. Banking information can be found in
    the :guilabel:`Private Information` tab on the employee's card. Edit the employee card, and add
    banking information, if it is missing.
 
@@ -163,11 +167,14 @@ If a payment needs to be cancelled or refunded, click the corresponding :guilabe
       :align: center
       :alt: Banking information can be entered in an employee's card.
 
+.. _payroll/all-payslips:
+
 All payslips
 ============
 
 To view all payslips regardless of status, go to :menuselection:`Payroll app --> Payslips --> All
-Payslips`. Here, all payslips are organized by batch (in a default list view).
+Payslips`. The :guilabel:`Employee Payslips` page loads, displaying all payslips, organized by batch
+(in a default list view).
 
 Click on the :guilabel:`▶ (arrow)` next to the individual batch name to view all the payslips in
 that particular batch, along with all the payslip details. The number of payslips in the batch is
@@ -338,7 +345,7 @@ From here, click the :guilabel:`Generate Draft Entry` button to change the paysl
 Once payslips have been generated, click the :guilabel:`Make Payment` button to process the
 payments. Doing so reveals a pop-up window, in which the proper banking information must be entered.
 In this pop-up window, select the appropriate :guilabel:`Bank Journal` from the drop-down menu, and
-enter the appropriate file name.
+enter the appropriate filename.
 
 When done, click the :guilabel:`Confirm` button to confirm the information, or click
 :guilabel:`Cancel` to discard.
