@@ -18,3 +18,4 @@ Advanced operations
    advanced_operations_warehouse/usage
    advanced_operations_warehouse/cluster_picking
    advanced_operations_warehouse/package
+   advanced_operations_warehouse/packaging
