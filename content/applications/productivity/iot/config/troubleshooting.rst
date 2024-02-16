@@ -99,6 +99,12 @@ Printer`. Follow the steps and select the *make* and *model* corresponding to th
    Epson and Star receipt printers and Zebra label printers do not need a driver to work. Make sure
    that no driver is selected for those printers.
 
+The printer is detected but is not recognized correctly
+-------------------------------------------------------
+
+If the printer is not recognized correctly, go to the form view of the device
+(:menuselection:`IoT App --> Devices -->Printer Device`) and change the subtype
+
 Epson configuration special case
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
